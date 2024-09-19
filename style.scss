@@ -1,0 +1,206 @@
+@font-face {
+    font-family: 'Open Sans';
+    src: url('/assets/fonts/OpenSans-Light.woff2') format('woff2'),
+        url('/assets/fonts/OpenSans-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('/assets/fonts/OpenSans-Regular.woff2') format('woff2'),
+        url('/assets/fonts/OpenSans-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('/assets/fonts/OpenSans-SemiBold.woff2') format('woff2'),
+        url('/assets/fonts/OpenSans-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0e1414;
+    color: #fff;
+    line-height: 1.6;
+    font-family: 'Open Sans';
+    font-weight: 300;
+    font-style: normal;
+    font-size: 16px;
+}
+
+h2 {
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    @media (max-width: 1199px) {
+        padding: 0 25px;
+    }
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+
+    @media (max-width: 480px) {
+        grid-template-columns: 1fr;
+    }
+
+    &-item {
+        display: flex;
+        flex-direction: column;
+
+        .image-wrapper {
+            margin-bottom: 25px;
+            overflow: hidden;
+
+            &:hover img {
+                transform: scale(1.5);
+            }
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all .3s ease;
+        }
+        
+        h3 {
+            margin-bottom: 10px;
+            font-weight: 600;
+            font-size: 18px;
+        }
+        
+        p {
+            color: #9a9a9a;
+        }
+        
+        a {
+            padding: 5px 0;
+            margin-top: 20px;
+            align-self: flex-start;
+            border-bottom: 1px solid #cf1430;
+            font-weight: normal;
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: all .3s ease;
+
+            &:hover,
+            &:focus {
+                padding: 5px 10px;
+                border: 1px solid #cf1430;
+                color: #cf1430;
+            }
+        }
+    }
+}
+
+.section {
+    margin: 180px 0;
+
+    @media (max-width: 999px) {
+        margin: 50px 0;
+    }
+
+    &-1 {
+        h2 {
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #fff;
+            font-size: 27px;
+        }
+
+        .grid-item {
+            .copy {
+                margin-bottom: 40px;
+                font-size: 18px;
+                color: #bbb;
+                overflow: hidden;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 10;
+                line-clamp: 10;
+                display: -webkit-box;
+            }
+
+            .bottom-text {
+                margin-bottom: 20px;
+                font-weight: 600;
+                font-size: 18px;
+                color: #fff;
+
+                strong {
+                    display: block;
+                    margin-bottom: 10px;
+                    font-weight: 600;
+                    font-size: 16px;
+                    color: #cf1430;
+                    text-transform: uppercase;
+                }
+            }
+
+            @media (min-width: 1200px) {
+                &:nth-child(1) {
+                    .image-wrapper {
+                        min-height: 617px;
+                    }
+                }
+            }
+
+            @media (max-width: 999px) {
+                &:nth-child(3) {
+                    grid-column: 1 / -1;
+                    grid-row: 1;
+                }
+            }
+        }
+    }
+
+    &-2 {
+        h2 {
+            margin-bottom: 50px;
+            font-size: 43px;
+            text-align: center;
+
+            @media (max-width: 991px) {
+                font-size: 36px;
+            }
+        }
+
+        .grid-item {
+            margin-bottom: 25px;
+
+            .image-wrapper {
+                border-bottom: 4px solid #cf1430;
+            }
+
+            p {
+                overflow: hidden;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 5;
+                line-clamp: 5;
+                display: -webkit-box;
+            }
+        }
+    }
+}
