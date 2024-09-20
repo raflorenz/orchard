@@ -10,20 +10,20 @@
 </head>
 <body>
     <div class="container">
-        <section class="section section-1">
+        <section id="gallery" class="section section-1">
             <div class="grid">
                 <article class="grid-item">
                     <div class="image-wrapper">
-                        <img src="/assets/images/image-01.jpg" alt="Father and son on a field">
+                        <img src="/assets/images/image-01.jpg" data-large-image="/assets/images/image-01@2x.jpg" alt="Father and son on a field" class="gallery-img">
                     </div>
                 </article>
 
                 <article class="grid-item">
                     <div class="image-wrapper">
-                        <img src="/assets/images/image-02.jpg" alt="Bowl of fruits and vegetables">
+                        <img src="/assets/images/image-02.jpg" data-large-image="/assets/images/image-02@2x.jpg" alt="Bowl of fruits and vegetables" class="gallery-img">
                     </div>
                     <div class="image-wrapper">
-                        <img src="/assets/images/image-03.jpg" alt="Four pieces of asparagus">
+                        <img src="/assets/images/image-03.jpg" data-large-image="/assets/images/image-03@2x.jpg" alt="Four pieces of asparagus" class="gallery-img">
                     </div>
                 </article>
 
@@ -69,6 +69,11 @@
                 </article>
             </div>
         </section>
+    </div>
+
+    <div id="modal" class="modal" aria-hidden="true">
+        <span class="close" aria-label="Close Modal">&times;</span>
+        <img id="modal-image" class="modal-content" alt="Expanded Image">
     </div>
 
     <script type="module" src="/main.js"></script>
